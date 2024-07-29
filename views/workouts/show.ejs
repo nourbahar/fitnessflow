@@ -1,0 +1,57 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= workout.title %></title>
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+
+  <h1><%= workout.name %></h1>
+  <p>Workout Type: <%= workout.type %></p>
+  <% if (workout.date) { %>
+    <p>Date: <%= workout.date %></p>
+  <% } %>
+
+  <% if (workout.duration) { %>
+    <p>Duration: <%= workout.duration %> minutes</p>
+  <% } %>
+
+  <% workout.exercises.forEach((exercise, index) => { %>
+    <div>
+      <h3>Exercise Set <%= index + 1 %></h3>
+      <% if (exercise.exercise1) { %>
+        <p>Exercise 1: <%= exercise.exercise1 %></p>
+      <% } %>
+      <% if (exercise.exercise2) { %>
+        <p>Exercise 2: <%= exercise.exercise2 %></p>
+      <% } %>
+      <% if (exercise.exercise3) { %>
+        <p>Exercise 3: <%= exercise.exercise3 %></p>
+      <% } %>
+      <% if (exercise.exercise4) { %>
+        <p>Exercise 4: <%= exercise.exercise4 %></p>
+      <% } %>
+      <% if (exercise.exercise5) { %>
+        <p>Exercise 5: <%= exercise.exercise5 %></p>
+      <% } %>
+    </div>
+  <% }); %>
+
+  <a href="/users/<%= user._id %>/workouts/<%= workout._id %>/edit">
+    Edit this Workout
+  </a>
+
+  <form
+  action="/users/<%= user._id %>/workouts/<%= workout._id %>?_method=DELETE"
+  method="POST"
+>
+  <button type="submit">Delete this Workout</button>
+</form>
+
+</body>
+</html>

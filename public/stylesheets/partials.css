@@ -1,0 +1,32 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 10px 20px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+#nav-header {
+    color: #FFD700;
+    font-size: 1.5em;
+    margin: 0;
+    font-weight: bold;
+}
+
+.authlink {
+    text-decoration: none;
+    margin: 0 15px;
+    color: #f6e7e7;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.authlink:hover {
+    color: #FFC107;
+}

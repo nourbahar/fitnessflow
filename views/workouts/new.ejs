@@ -1,0 +1,48 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title>Add a New App</title>
+</head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+
+    <h1>Add a New Workout</h1>
+      <form action="/users/:userId/workouts/new" method="POST">
+    <label for="name">Exercise Name:</label>
+    <input type="text" name="name" id="name">
+
+    <label for="type">Workot Type:</label>
+    <select id="type" name="type">
+      <option value="Stregth">Stregth</option>
+      <option value="Cardio">Cardio</option>
+      <option value="Flexbility">Flexbility</option>
+      <option value="Yoga">Yoga</option>
+      <option value="HIIT">HIIT</option>
+    </select>
+
+    
+    <label for="date">Date:</label>
+    <input type="date" name="date" id="date" required>
+
+    <label for="exercises">Exercises:</label>
+    <div id="exercises">
+        <input type="text" name="exercises[0]" placeholder="Exercise 1"><br>
+        <input type="text" name="exercises[1]" placeholder="Exercise 2"><br>
+        <input type="text" name="exercises[2]" placeholder="Exercise 3"><br>
+        <input type="text" name="exercises[3]" placeholder="Exercise 4"><br>
+        <input type="text" name="exercises[4]" placeholder="Exercise 5"><br>
+    </div><br>
+    
+
+    <label for="duration">Duration:</label>
+    <input type="text" name="duration" id="duration" >
+
+    <button type="submit">Add Workout</button>
+  </form>
+  </body>
+</html>

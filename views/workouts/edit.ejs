@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title>Editing <%= workout.title %></title>
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <h1>Edit <%= workout.name %> </h1>
+
+  <form 
+    action="/users/<%= user._id %>/workouts/<%= workout._id %>?_method=PUT"
+    method="POST"
+  >
+    <label for="name">Workout Name:</label>
+    <input 
+      type="text" 
+      name="name" 
+      id="name" 
+      value="<%= workout.name %>"
+    >
+    <label for="date">Date:</label>
+    <input type="date" name="date" id="date" value="<%= workout.date %>">
+
+   
+    
+    
+    <label for="duration">Duration:</label>
+    <input 
+      type="text" 
+      name="duration" 
+      id="duration" 
+      value="<%= workout.duration %>"
+    >
+
+
+    <label for="type">Workot Type:</label>
+    <select id="type" name="type">
+
+      <option 
+        value="Stregth" 
+        <%= workout.status === "Stregth" ? "selected" : "" %>
+      >
+      Stregth
+      </option>
+      <option 
+        value="Cardio" 
+        <%= workout.status === "Cardio" ? "selected" : "" %>
+      >
+      Cardio
+      </option>
+      <option 
+        value="Flexbility" 
+        <%= workout.status === "Flexbility" ? "selected" : "" %> 
+      >
+      Flexbility
+      </option>
+      <option 
+        value="Yoga" 
+        <%= workout.status === "Yoga" ? "selected" : "" %>
+      >
+      Yoga
+      </option>
+      <option
+        value="HIIT"
+        <%= workout.status === "HIIT" ? "selected" : "" %>
+      >
+      HIIT
+      </option>
+    </select>
+    <button type="submit">Update Workout</button>
+  </form>
+</body>
+</html>
