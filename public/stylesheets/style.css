@@ -10,6 +10,7 @@ body {
     height: 100vh;
     margin: 0;
     color: white;
+    padding-top: 60px;
 }
 
 .index-body {
@@ -141,4 +142,101 @@ button {
 
 button:hover {
     background-color: #FFC107;
+}
+/* public/stylesheets/style.css */
+
+.new-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .new-body > form,
+  .edit-body > form {
+    height: 70%;
+  }
+  
+  textarea,
+  select {
+    border: 1px solid rgb(182, 182, 182);
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  select {
+    margin-bottom: 10px;
+  }
+  
+  .edit-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .all-apps-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.all-apps-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.all-apps-header h1 {
+    font-size: 2em;
+    color: #FFD700;
+    margin: 0;
+}
+
+.add-app-link {
+    background-color: #FFD700;
+    color: #1c2e5b;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+.add-app-link:hover {
+    background-color: #FFC107;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+li {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }

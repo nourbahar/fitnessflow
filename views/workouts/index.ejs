@@ -8,9 +8,10 @@
   <link rel="stylesheet" href="/stylesheets/style.css" />
   <title>workout</title>
 </head>
-<body>
-    <%- include('../partials/_navbar.ejs') %>
 
+<body>
+   
+  <%- include('../partials/_navbar.ejs') %>
     <div class="all-apps-body">
       <div class="all-apps-header">
         <h1>Your Workout</h1>
@@ -21,7 +22,7 @@
         <li>
          
           <a href="/users/<%= user._id %>/workouts/<%= workout._id %>">
-              <%= workout.name %> : <%= workout.type %>
+              <%= workout.date.toDateString() %> : <%= workout.name %>
           </a>
         </li>
       <% }) %>

@@ -4,17 +4,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/show.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title><%= workout.title %></title>
+  <title><%= workout.name %></title>
 </head>
+<%- include('../partials/_navbar.ejs') %>
 <body>
-  <%- include('../partials/_navbar.ejs') %>
 
-  <h1><%= workout.name %></h1>
+  <div class="show-body">
+    <div class="show-header">
+  
+  <div class="show-notes-container">
+    <h1><%= workout.name %></h1>
   <p>Workout Type: <%= workout.type %></p>
   <% if (workout.date) { %>
-    <p>Date: <%= workout.date %></p>
+    <p>Date: <%= workout.date.toDateString() %></p>
   <% } %>
 
   <% if (workout.duration) { %>
@@ -41,17 +45,21 @@
       <% } %>
     </div>
   <% }); %>
-
+  </div>
+  <div class="show-sidebar">
+    <div class="show-actions">
   <a href="/users/<%= user._id %>/workouts/<%= workout._id %>/edit">
     Edit this Workout
   </a>
-
   <form
   action="/users/<%= user._id %>/workouts/<%= workout._id %>?_method=DELETE"
   method="POST"
 >
   <button type="submit">Delete this Workout</button>
 </form>
-
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

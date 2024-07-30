@@ -1,8 +1,8 @@
 .navbar {
     display: flex;
     flex-direction: row;
-    width: 100%;
-    padding: 10px 20px;
+    max-width: 100vw;
+    padding: 5px 20px;
     justify-content: space-between;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.8);
