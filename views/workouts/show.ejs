@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><%= workout.name %></title>
 </head>
-<%- include('../partials/_navbar.ejs') %>
-<body>
 
+<body>
+<%- include('../partials/_navbar.ejs') %>
   <div class="show-body">
     <div class="show-header">
   
   <div class="show-notes-container">
-    <h1><%= workout.name %></h1>
+    <h1><%= workout.name %> Workout</h1>
   <p>Workout Type: <%= workout.type %></p>
   <% if (workout.date) { %>
     <p>Date: <%= workout.date.toDateString() %></p>
@@ -25,26 +25,24 @@
     <p>Duration: <%= workout.duration %> minutes</p>
   <% } %>
 
-  <% workout.exercises.forEach((exercise, index) => { %>
     <div>
-      <h3>Exercise Set <%= index + 1 %></h3>
-      <% if (exercise.exercise1) { %>
-        <p>Exercise 1: <%= exercise.exercise1 %></p>
+      <p>Exercises : </p>
+      <% if (workout.exercises1) { %>
+      <ul> <p><%= workout.exercises1 %></p></ul> 
       <% } %>
-      <% if (exercise.exercise2) { %>
-        <p>Exercise 2: <%= exercise.exercise2 %></p>
+      <% if (workout.exercises2) { %>
+        <ul>  <p><%= workout.exercises2 %></p></ul>
       <% } %>
-      <% if (exercise.exercise3) { %>
-        <p>Exercise 3: <%= exercise.exercise3 %></p>
+      <% if (workout.exercises3) { %>
+        <ul>  <p><%= workout.exercises3 %></p></ul>
       <% } %>
-      <% if (exercise.exercise4) { %>
-        <p>Exercise 4: <%= exercise.exercise4 %></p>
+      <% if (workout.exercises4) { %>
+        <ul> <p><%= workout.exercises4 %></p></ul>
       <% } %>
-      <% if (exercise.exercise5) { %>
-        <p>Exercise 5: <%= exercise.exercise5 %></p>
+      <% if (workout.exercises5) { %>
+        <ul> <p><%= workout.exercises5 %></p></ul>
       <% } %>
     </div>
-  <% }); %>
   </div>
   <div class="show-sidebar">
     <div class="show-actions">

@@ -1,41 +1,44 @@
 const mongoose = require('mongoose');
 
-const exerciseSchema = new mongoose.Schema({
-  
-name:{
-  type:String,
-},
-reps:{
-  type:Number
-},
-sets:{
-  type:Number
-},
-
-weight:{
-  type:Number
-}
- 
- }, { timestamps: true });
-
 const workoutSchema = new mongoose.Schema({
- name:{
-  type: String
- },
+  name: {
+    type: String,
+  },
   date: {
     type: Date,
     required: true,
   },
 
-  duration:{
-    type: Number
+  duration: {
+    type: Number,
   },
-  
+
   type: {
     type: String,
-    enum: ['Stregth', 'Cardio', 'Flexbility','Yoga','HIIT'],
+    enum: ["Stregth", "Cardio", "Flexbility", "Yoga", "HIIT"],
   },
- exercises:[exerciseSchema]
+  exercises1:{
+    type: String
+  },
+
+  exercises2:{
+    type: String
+  },
+
+  exercises3:{
+    type: String
+  },
+  exercises4:{
+    type: String
+  },
+
+  exercises5:{
+    type: String
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 
 const userSchema = mongoose.Schema({
@@ -47,8 +50,7 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  workouts:[workoutSchema]
- 
+  workouts:[workoutSchema],
 });
 
 const User = mongoose.model('User', userSchema);

@@ -1,4 +1,3 @@
-
 const express = require('express');
 const router = express.Router();
 
@@ -79,7 +78,7 @@ router.get('/:workoutId', async (req, res) => {
     const currentUser = await User.findById(req.session.user._id);
   
     const workout = currentUser.workouts.id(req.params.workoutId);
-  
+  console.log(workout);
     res.render('workouts/show.ejs', {
       workout: workout,
     });

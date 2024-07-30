@@ -6,17 +6,20 @@
   <link rel="stylesheet" href="/stylesheets/style.css" />
   <title>Editing <%= workout.title %></title>
 </head>
-<%- include('../partials/_navbar.ejs') %>
-<body>
-  
-  <div class="edit-body">
-  <h1>Edit <%= workout.name %> </h1>
 
-  <form 
-    action="/users/<%= user._id %>/workouts/<%= workout._id %>?_method=PUT"
-    method="POST"
-  >
-    <label for="name">Workout Name:</label>
+
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <div class="new-body">
+
+    <form 
+    action="/users/<%= user._id %>/workouts/<%= workout._id %>?_method=PUT" method="POST">
+     
+    <h1>Edit <%= workout.name %> </h1>
+      <div class="container-row">
+       <div class="workout-container">
+
+        <label for="name">Workout Name:</label>
     <input 
       type="text" 
       name="name" 
@@ -24,7 +27,7 @@
       value="<%= workout.name %>"
     >
     <label for="date">Date:</label>
-    <input type="date" name="date" id="date" value="<%= workout.date %>">
+    <input type="date" name="date" value="<%= workout.date.toISOString().slice(0, 10) %>">
 
    
     
@@ -72,8 +75,27 @@
       HIIT
       </option>
     </select>
-    <button type="submit">Update Workout</button>
-  </form>
-  </div>
-</body>
+ 
+      </div>
+      <div class="Exercise-container">
+        <label for="exercises">Exercises:</label>
+        <div id="exercises">
+          <input type="text" name="exercises1"  value="<%= workout.exercises1 %>"><br>
+          <input type="text" name="exercises2" value="<%= workout.exercises2 %>"><br>
+          <input type="text" name="exercises3"  value="<%= workout.exercises3 %>"><br>
+          <input type="text" name="exercises4" value="<%= workout.exercises4 %>"><br>
+          <input type="text" name="exercises5"  value="<%= workout.exercises5 %>"><br>
+        </div>
+
+        </div><br>
+       </div>
+
+       <button type="submit">Update Workout</button>
+        </div>
+        
+       </form>
+       </div>
+       </body>
+
+
 </html>

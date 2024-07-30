@@ -104,8 +104,10 @@ h1 {
 form {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    width: 300px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
     padding: 30px;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 15px;
@@ -135,7 +137,7 @@ button {
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    color: #1c2e5b;
+    color: balck;
     font-weight: bold;
     transition: background-color 0.3s;
 }
@@ -143,13 +145,13 @@ button {
 button:hover {
     background-color: #FFC107;
 }
-/* public/stylesheets/style.css */
 
 .new-body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    width: 100%;
+    padding: 20px;
   }
   
   .new-body > form,
@@ -239,4 +241,47 @@ li a {
 
 li a:hover {
     background-color: rgba(255, 255, 255, 0.2);
+}
+
+.container-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+
+.workout-container, .exercise-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 350px;
+    margin: 10px;
+}
+
+
+@media (max-width: 768px) {
+    body{
+        
+    }
+    .show-notes-container h1 {
+        font-size: 2em;
+    }
+
+    .show-notes-container p {
+        font-size: 1em;
+    }
+
+    .show-actions {
+        flex-direction: column;
+    }
+
+    .show-actions a,
+    .show-actions button {
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+    }
 }
