@@ -15,9 +15,9 @@ The app additionally allows you to edit and delete workout records, ensuring tha
 ## Technologies Used
 
 * Frontend: HTML, CSS 
-* Backend: Node.js, Express.js
+* Backend: Node.js , Ejs
 * Database: MongoDB 
-* Templating Engine: EJS
+
 
 ## Future Enhancements:
 1. Adding profile details to each user.
