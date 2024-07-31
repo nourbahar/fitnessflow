@@ -10,6 +10,7 @@
   <%- include('../partials/_navbar.ejs') %>
   <div class="signup-container">
   <h1>Create a new account!</h1>
+  
   <form action="/auth/sign-up" method="POST">
     <label for="username">Username:</label>
     <input type="text" name="username" id="username" required />
@@ -22,6 +23,9 @@
       id="confirmPassword"
       required 
     />
+
+    
+  
     <button type="submit">Sign up</button>
   </form>
 </div>

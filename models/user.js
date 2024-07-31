@@ -47,6 +47,26 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  name:{
+    type: String,
+  },
+  gender:{
+    type: String,
+    enum: ["Female","Male"]
+  },
+  currentweight:{
+    type: Number,
+  },
+  goalweight:{
+    type: Number,
+  },
+  height:{
+    type: Number,
+  },
+  goal: {
+    type: String,
+    enum: ["Lose Weight", "Gain Weight", "Maintain"],
+  },
   workouts:[workoutSchema],
 });
 
