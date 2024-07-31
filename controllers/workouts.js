@@ -26,7 +26,6 @@ router.get('/', async (req, res) => {
 });
 
 
-
 router.post('/new', async (req, res) => {
   try {
     //console.log("posting")
@@ -50,8 +49,6 @@ router.post('/new', async (req, res) => {
     res.redirect('/')
   }
 });
-
-
 
 
 router.delete('/:workoutId', async (req, res) => {
@@ -78,7 +75,7 @@ router.get('/:workoutId', async (req, res) => {
     const currentUser = await User.findById(req.session.user._id);
   
     const workout = currentUser.workouts.id(req.params.workoutId);
-  console.log(workout);
+ 
     res.render('workouts/show.ejs', {
       workout: workout,
     });
@@ -88,7 +85,6 @@ router.get('/:workoutId', async (req, res) => {
     res.redirect('/')
   }
 });
-
 
 router.put('/:workoutId', async (req, res) => {
   try {

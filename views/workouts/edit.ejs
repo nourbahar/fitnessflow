@@ -20,35 +20,34 @@
        <div class="workout-container">
 
         <label for="name">Workout Name:</label>
-    <input 
-      type="text" 
-      name="name" 
-      id="name" 
-      value="<%= workout.name %>"
-    >
-    <label for="date">Date:</label>
-    <input type="date" name="date" value="<%= workout.date.toISOString().slice(0, 10) %>">
+         <input 
+            type="text" 
+            name="name" 
+            id="name" 
+            value="<%= workout.name %>"
+            >
+             <label for="date">Date:</label>
+                 <input type="date" name="date" value="<%= workout.date.toISOString().slice(0, 10) %>">
 
    
     
     
-    <label for="duration">Duration:</label>
-    <input 
-      type="text" 
-      name="duration" 
-      id="duration" 
-      value="<%= workout.duration %>"
+         <label for="duration">Duration:</label>
+          <input 
+           type="text" 
+            name="duration" 
+            id="duration" 
+            value="<%= workout.duration %>"
     >
 
 
-    <label for="type">Workot Type:</label>
-    <select id="type" name="type">
+            <label for="type">Workot Type:</label>
+            <select id="type" name="type">
 
-      <option 
-        value="Stregth" 
-        <%= workout.status === "Stregth" ? "selected" : "" %>
-      >
-      Stregth
+              <option 
+                value="Stregth" 
+                <%= workout.status === "Stregth" ? "selected" : "" %>
+      > Stregth
       </option>
       <option 
         value="Cardio" 

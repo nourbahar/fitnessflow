@@ -35,11 +35,8 @@ const workoutSchema = new mongoose.Schema({
   exercises5:{
     type: String
   },
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
-  },
-});
+  
+}, { timestamps: true })
 
 const userSchema = mongoose.Schema({
   username: {

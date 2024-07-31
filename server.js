@@ -32,6 +32,8 @@ app.use(
     saveUninitialized: true,
   })
 );
+app.use(morgan('dev'))
+
 app.use(passUserToView);
 
 app.get('/', (req, res) => {

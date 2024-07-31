@@ -10,6 +10,8 @@
     position: fixed;
     top: 0;
     z-index: 1000;
+    left: 0;
+    right: 0;
 }
 
 #nav-header {
