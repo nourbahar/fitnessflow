@@ -1,4 +1,4 @@
-#Fitness Flow
+# Fitness Flow
 
 Fitness Flow is a web application that allows you to keep track of your workouts. 
 This app allows you to log the details of each workout, which includes the type, duration, date, and specific exercises performed. 
