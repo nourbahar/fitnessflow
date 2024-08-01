@@ -15,7 +15,7 @@
     <div class="show-header">
   
   <div class="show-notes-container">
-    <h1><%= workout.name %> Workout</h1>
+    <h3><%= workout.name %> Workout</h3>
   <p>Workout Type: <%= workout.type %></p>
   <% if (workout.date) { %>
     <p>Date: <%= workout.date.toDateString() %></p>
@@ -43,19 +43,20 @@
         <ul> <p><%= workout.exercises5 %></p></ul>
       <% } %>
     </div>
+    <div class="show-sidebar">
+      <div class="show-actions">
+    <a href="/users/<%= user._id %>/workouts/<%= workout._id %>/edit">
+      Edit this Workout
+    </a>
+    <form
+    action="/users/<%= user._id %>/workouts/<%= workout._id %>?_method=DELETE"
+    method="POST"
+  >
+    <button type="submit">Delete this Workout</button>
+  </form>
   </div>
-  <div class="show-sidebar">
-    <div class="show-actions">
-  <a href="/users/<%= user._id %>/workouts/<%= workout._id %>/edit">
-    Edit this Workout
-  </a>
-  <form
-  action="/users/<%= user._id %>/workouts/<%= workout._id %>?_method=DELETE"
-  method="POST"
->
-  <button type="submit">Delete this Workout</button>
-</form>
-</div>
+  </div>
+  
 </div>
 </div>
 </div>
