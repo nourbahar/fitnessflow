@@ -20,6 +20,6 @@ The app additionally allows you to edit and delete workout records, ensuring tha
 
 
 ## Future Enhancements:
-1. Adding profile details to each user.
+1. Adding profile page to each user.
 2. Progress Tracking: Tracking weights, goals, and workouts progress over time.
 3. Add social tools such as sharing workouts, following friends where users can share tips, achievements, and support one another.
